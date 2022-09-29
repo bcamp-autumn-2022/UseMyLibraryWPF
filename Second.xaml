@@ -1,0 +1,15 @@
+﻿<Window x:Class="UseMyLibraryWPF.Second"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UseMyLibraryWPF"
+        mc:Ignorable="d"
+        Title="Second" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnShowFname" Content="Show Fname" HorizontalAlignment="Left" Margin="122,66,0,0" VerticalAlignment="Top" Height="39" Width="137" Click="btnShowFname_Click"/>
+        <TextBlock x:Name="tbFname" HorizontalAlignment="Left" Margin="138,173,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="44" Width="121"/>
+        <TextBlock x:Name="tbInfo" HorizontalAlignment="Left" Margin="122,27,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="165"/>
+
+    </Grid>
+</Window>

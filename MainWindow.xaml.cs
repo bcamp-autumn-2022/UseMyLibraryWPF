@@ -21,7 +21,7 @@ namespace UseMyLibraryWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        Cat objectCat;
+        List<Cat> catsCollection;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,14 +33,46 @@ namespace UseMyLibraryWPF
 
         private void InitializeCat()
         {
-            objectCat=new Cat();
-            objectCat.Age = 5;
-            objectCat.Name = "Garfield";
+            catsCollection = new List<Cat>();
+            catsCollection.Add(new Cat { Age = 5, Name = "Garfield" });
+            catsCollection.Add(new Cat { Age = 6, Name = "Bob" });
+            catsCollection.Add(new Cat { Age = 7, Name = "Jane" });
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Cat name is " + objectCat.Name + " and it is " + objectCat.Age + "years old");
+            dataGridCats.ItemsSource = catsCollection.ToList();
+        }
+
+        private void dataGridCats_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dynamic selectedRow=dataGridCats.SelectedItem;
+            var selectedName=selectedRow.Name;
+            var selectedAge=selectedRow.Age;
+            if (selectedName == null)
+            {
+                MessageBox.Show("Wrong line");
+            }
+            else
+            {
+                textSelectedName.Text = selectedName;
+                textSelectedAge.Text = selectedAge.ToString();
+            }
+
+        }
+
+        private void btnOpenSecond_Click(object sender, RoutedEventArgs e)
+        {
+            Second objectSecond = new Second("Testing ");
+            objectSecond.Note = "Hello from MainWindow";
+            objectSecond.Show();
+            //objectSecond.ShowDialog();
+        }
+
+        private void btnSetName_Click(object sender, RoutedEventArgs e)
+        {
+            Singleton si = Singleton.Instance;
+            si.Fname = "Teppo";
         }
     }
 }

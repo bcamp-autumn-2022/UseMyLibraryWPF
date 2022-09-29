@@ -7,7 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="button" Content="Show Cat data" HorizontalAlignment="Left" Margin="173,128,0,0" VerticalAlignment="Top" Height="89" Width="337" Click="button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="310*"/>
+            <ColumnDefinition Width="41*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="72*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="button" Content="Show Cat data" HorizontalAlignment="Left"  VerticalAlignment="Center"  Width="337" Click="button_Click" Grid.Row="1" Grid.Column="1"/>
+        <DataGrid x:Name="dataGridCats"  Grid.Column="1" Grid.Row="2"  SelectionChanged="dataGridCats_SelectionChanged">
+        </DataGrid>
+        <TextBlock x:Name="textSelectedName" Grid.Column="1" HorizontalAlignment="Left" Margin="81,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="27" Width="167" FontSize="24"/>
+        <TextBlock x:Name="textSelectedAge" Grid.Column="1" HorizontalAlignment="Left" Margin="337,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="32" Width="73" FontSize="24"/>
+        <Button x:Name="btnOpenSecond" Grid.Column="1" Content="Show Second" HorizontalAlignment="Left" Margin="51,15,0,0" Grid.Row="4" VerticalAlignment="Top" Height="21" Width="322" Click="btnOpenSecond_Click"/>
+        <Button x:Name="btnSetName" Grid.Column="1" Content="Set name" HorizontalAlignment="Left" Margin="374,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="132" Click="btnSetName_Click"/>
 
     </Grid>
 </Window>
