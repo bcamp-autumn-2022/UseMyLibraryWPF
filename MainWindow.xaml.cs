@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyLibrary;
 
 namespace UseMyLibraryWPF
 {
@@ -20,9 +21,26 @@ namespace UseMyLibraryWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        Cat objectCat;
         public MainWindow()
         {
             InitializeComponent();
+            
+            InitializeCat();
+        }
+
+   
+
+        private void InitializeCat()
+        {
+            objectCat=new Cat();
+            objectCat.Age = 5;
+            objectCat.Name = "Garfield";
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Cat name is " + objectCat.Name + " and it is " + objectCat.Age + "years old");
         }
     }
 }
