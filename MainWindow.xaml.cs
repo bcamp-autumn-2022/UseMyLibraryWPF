@@ -46,18 +46,22 @@ namespace UseMyLibraryWPF
 
         private void dataGridCats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            dynamic selectedRow=dataGridCats.SelectedItem;
-            var selectedName=selectedRow.Name;
-            var selectedAge=selectedRow.Age;
-            if (selectedName == null)
+            try
             {
-                MessageBox.Show("Wrong line");
-            }
-            else
-            {
+                dynamic selectedRow = dataGridCats.SelectedItem;
+                var selectedName = selectedRow.Name;
+                var selectedAge = selectedRow.Age;
                 textSelectedName.Text = selectedName;
                 textSelectedAge.Text = selectedAge.ToString();
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Wrong line");
+            }
+            
+   
+
 
         }
 
