@@ -20,7 +20,7 @@
             <RowDefinition Height="72*"/>
         </Grid.RowDefinitions>
         <Button x:Name="button" Content="Show Cat data" HorizontalAlignment="Left"  VerticalAlignment="Center"  Width="337" Click="button_Click" Grid.Row="1" Grid.Column="1"/>
-        <DataGrid x:Name="dataGridCats"  Grid.Column="1" Grid.Row="2"  SelectionChanged="dataGridCats_SelectionChanged">
+        <DataGrid x:Name="dataGridCats"  Grid.Column="1" Grid.Row="2"  SelectionChanged="dataGridCats_SelectionChanged" CanUserAddRows="false">
         </DataGrid>
         <TextBlock x:Name="textSelectedName" Grid.Column="1" HorizontalAlignment="Left" Margin="81,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="27" Width="167" FontSize="24"/>
         <TextBlock x:Name="textSelectedAge" Grid.Column="1" HorizontalAlignment="Left" Margin="337,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="32" Width="73" FontSize="24"/>
